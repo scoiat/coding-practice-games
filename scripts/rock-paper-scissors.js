@@ -16,11 +16,7 @@ function computerPlay() {
 function humanPlay() {
     let humanSelection = prompt("Type your weapon (rock, paper, scissors)");
     
-    if (!humanSelection) {
-        return "invalid";        
-    } else {
-        return humanSelection.toLocaleLowerCase();
-    }     
+    if (humanSelection) {return humanSelection.toLocaleLowerCase();}     
 }
 
 //Single round of RPS      
@@ -58,14 +54,12 @@ function game() {
                 console.log(`Round ${i}: ${playerSelection} beats ${computerSelection} | You win!`); break;
             case "computer":
                 computerPoints++;
-                console.log(`Round ${i}: ${computerSelection} beats ${playerSelection} | You lose!`);
-                break;
+                console.log(`Round ${i}: ${computerSelection} beats ${playerSelection} | You lose!`); break;
             case "tie":
                 tie++;
-                console.log(`Round ${i}: TIE ${computerSelection} = ${playerSelection}`);
-                break;
+                console.log(`Round ${i}: TIE ${computerSelection} = ${playerSelection}`); break;
             case "invalid":                
-                console.log(`Round ${i}: Invalid data entered. Invalid round.`)
+                console.log(`Round ${i}: Invalid data entered. Invalid round.`); {break};
         }
                 
         if ((humanPoints === 5) | (computerPoints === 5)) {break;}
